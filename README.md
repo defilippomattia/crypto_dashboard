@@ -1,5 +1,8 @@
 # crypto_dashboard
 
+Shows basic cryptocurrencies prices (Open, High, Close, Low...) and number of commits on github repository for specific coin.  
+
+
 pip install streamlit  
 streamlit run main.py
 
