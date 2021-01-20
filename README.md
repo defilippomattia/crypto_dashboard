@@ -11,3 +11,6 @@ streamlit run main.py
 ![alt text](https://i.ibb.co/X8TCxgp/2.png)
 -----------------------------------------------
 
+TODO  
+- last tweets  
+- team/partership (manual?)  
