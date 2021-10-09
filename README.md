@@ -1,4 +1,5 @@
-# Starting the project
+# 1. Introduciton
+# 2. Starting the project
  
 1. (Optional) Create virtual environment   
 
