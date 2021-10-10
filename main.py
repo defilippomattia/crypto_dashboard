@@ -9,7 +9,7 @@ from datetime import date
 
 st.title('Hello')
 
-ts_price_response = requests.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=3&interval=daily')
+ts_price_response = requests.get('https://api.coingecko.com/api/v3/coins/ravencoin/market_chart?vs_currency=usd&days=11430&interval=daily')
 ts_price_dict = json.loads(ts_price_response.text)
 ts_prices = ts_price_dict["prices"]
 ts_market_caps = ts_price_dict["market_caps"]
@@ -24,4 +24,7 @@ total_volumes = [ts_total_volume[1] for ts_total_volume in ts_total_volumes]
 combined_data = list(map(list,zip(ts,ymd_date,prices,market_caps,total_volumes)))
 
 df = pd.DataFrame(combined_data, columns=["timestamp", "date","price","market_cap","total_volume"])
+df["sma_4y"] = df.price.rolling(1458).mean()
+df.index=ymd_date
+st.line_chart(df[["price","sma_4y"]])
 df
